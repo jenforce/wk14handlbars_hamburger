@@ -1,0 +1,19 @@
+{
+  "name": "wk14handlebars_hamburger",
+  "version": "1.0.0",
+  "description": "wk 14 homework using handlebars web server simple app to move burgers with data persistence",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jenforce/wk14handlebars_hamburger.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jenforce/wk14handlebars_hamburger/issues"
+  },
+  "homepage": "https://github.com/jenforce/wk14handlebars_hamburger#readme"
+}
