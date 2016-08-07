@@ -15,5 +15,14 @@
   "bugs": {
     "url": "https://github.com/jenforce/wk14handlebars_hamburger/issues"
   },
-  "homepage": "https://github.com/jenforce/wk14handlebars_hamburger#readme"
+  "homepage": "https://github.com/jenforce/wk14handlebars_hamburger#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0",
+    "graceful-fs": "^4.1.5",
+    "handlebars-helper-css": "^0.1.0",
+    "method-override": "^2.3.6",
+    "mysql": "^2.11.1"
+  }
 }

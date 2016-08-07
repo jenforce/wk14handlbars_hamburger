@@ -1,16 +1,16 @@
-<h1>Cats!</h1>
 
-<h2>Cats that are not sleepy!</h2>
+<div class="pull-left">
+<h1>BURGERS!</h1>
 
 <ul>
-  {{#each cats}}
-    {{#unless this.sleepy}}
+  {{#each burgers}}
+    {{#unless this.eat}}
       <li>
         {{this.name}}
 
-        <form action="cats/update/{{this.id}}?_method=PUT" method="POST">
-          <input type="hidden" name="sleepy" value="true">
-          <button type="submit">SLEEP TIME!</button>
+        <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
+          <input type="hidden" name="eat" value="true">
+          <button type="submit">EATEN!</button>
         </form>
 
         
@@ -19,17 +19,19 @@
   {{/each}}
 </ul>
 
-<h2>Cats that are sleepy!</h2>
+</div>
+
+<h2>Burgers Eat!</h2>
 
 <ul>
-  {{#each cats}}
-    {{#if this.sleepy}}
+  {{#each burgers}}
+    {{#if this.eat}}
       <li>
         {{this.name}}
 
-        <form action="cats/update/{{this.id}}?_method=PUT" method="POST">
-          <input type="hidden" name="sleepy" value="false">
-          <button type="submit">WAKE UP!</button>
+        <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
+          <input type="hidden" name="eat" value="false">
+          <button type="submit">EAT ME!</button>
         </form>
 
     
@@ -38,19 +40,19 @@
   {{/each}}
 </ul>
 
-<h2>Add a Cat</h2>
-<form class="create-update-form" action="cats/create" method="POST">
+<h2>Add a BURGER</h2>
+<form class="create-update-form" action="burgers/create" method="POST">
 
   <div class="form-group">
-    <label for="ca">Cat Name:</label>
+    <label for="ca">Burger Name:</label>
     <input type="text" id="ca" name="name">
   </div>
 
   <div class="form-group">
-    <label for="slee">Sleepy?</label><br>
-    <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
-    <input type="radio" name="sleepy" value="0"> Awake
+    <label for="eat">EAT?</label><br>
+    <input type="radio" name="eat" value="1" checked> EAT!<br>
+    <input type="radio" name="eat" value="0"> EATEN
   </div>
 
-  <button type="submit">Add Cat</button>
+  <button type="submit">Add Burger</button>
 </form>

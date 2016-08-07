@@ -1,38 +1,36 @@
-/*
-Here is where you create all the functions that will do the routing for your app, and the logic of each route.
-*/
+
 var express = require('express');
 var router = express.Router();
-var cat = require('../models/cat.js');
+var burger = require('../models/burger.js');
 
 router.get('/', function (req, res) {
-  res.redirect('/cats');
+  res.redirect('/burgers');
 });
 
-router.get('/cats', function (req, res) {
-  cat.all(function (data) {
-    var hbsObject = { cats: data };
+router.get('/burgers', function (req, res) {
+  burger.all(function (data) {
+    var hbsObject = {burgers: data };
     console.log(hbsObject);
     res.render('index', hbsObject);
   });
 });
 
-router.post('/cats/create', function (req, res) {
-  cat.create(['name', 'sleepy'], [req.body.name, req.body.sleepy], function () {
-    res.redirect('/cats');
+router.post('/burgers/create', function (req, res) {
+  burger.create(['name', 'eat'], [req.body.name, req.body.eat], function () {
+    res.redirect('/burgers');
   });
 });
 
-router.put('/cats/update/:id', function (req, res) {
+
+
+router.put('/burgers/update/:id', function (req, res) {
   var condition = 'id = ' + req.params.id;
 
   console.log('condition', condition);
 
-  cat.update({ sleepy: req.body.sleepy }, condition, function () {
-    res.redirect('/cats');
+  burger.update({ eat: req.body.eat }, condition, function () {
+    res.redirect('/burgers');
   });
 });
-
-
 
 module.exports = router;
