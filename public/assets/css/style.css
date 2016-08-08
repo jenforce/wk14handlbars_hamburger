@@ -4,16 +4,29 @@ li {
   padding: 5px;
 }
 
-.label {
-  font-weight: bold;
-}
 
-.create-update-form {
-  background: aqua;
-  margin: 5px;
-  padding: 5px;
-}
 
 .form-group {
   margin-bottom: 5px;
+}
+
+.pull-left {
+  float: left !important;
+}
+.pull-right {
+  float: right !important;
+}
+.clearfloat{
+clear: both;
+}
+.bandc{
+  background-color: pink;
+}
+.font{
+  font-family: arial;
+  margin:15px;
+}
+
+.output{
+  display: inline-block;
 }

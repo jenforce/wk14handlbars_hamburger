@@ -1,58 +1,65 @@
 
-<div class="pull-left">
-<h1>BURGERS!</h1>
+<div class="row">
+  <h1>BURGERS!</h1>
+</div>
+ 
 
-<ul>
+<div class="pull-left">
+<ol>
   {{#each burgers}}
     {{#unless this.eat}}
       <li>
         {{this.name}}
 
-        <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
+        <form class="form-inline pull-right" action="burgers/update/{{this.id}}?_method=PUT" method="POST">
           <input type="hidden" name="eat" value="true">
-          <button type="submit">EATEN!</button>
+          <button type="submit">EAT ME!</button>
         </form>
 
-        
       </li>
     {{/unless}}
   {{/each}}
-</ul>
-
+</ol>
 </div>
 
-<h2>Burgers Eat!</h2>
+<div class="pull-right">
 
-<ul>
+<ol>
   {{#each burgers}}
     {{#if this.eat}}
       <li>
         {{this.name}}
 
-        <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
+        <form class="pull-right form-inline" action="burgers/update/{{this.id}}?_method=PUT" method="POST">
           <input type="hidden" name="eat" value="false">
-          <button type="submit">EAT ME!</button>
+          <button type="submit">EATEN!</button>
         </form>
 
     
       </li>
     {{/if}}
   {{/each}}
-</ul>
+</ol>
+</div>
 
-<h2>Add a BURGER</h2>
-<form class="create-update-form" action="burgers/create" method="POST">
 
-  <div class="form-group">
-    <label for="ca">Burger Name:</label>
-    <input type="text" id="ca" name="name">
-  </div>
 
-  <div class="form-group">
-    <label for="eat">EAT?</label><br>
-    <input type="radio" name="eat" value="1" checked> EAT!<br>
-    <input type="radio" name="eat" value="0"> EATEN
-  </div>
+<div class="clearfloat bandc">
+ 
+    <h2>ADD BURGERS</h2>
+      <form class="form-inline" action="burgers/create" method="POST">
 
-  <button type="submit">Add Burger</button>
-</form>
+        <div class="form-group form-inline">
+        <label for="ca">Burger Name:</label>
+        <input type="text" id="ca" name="name">
+        </div>
+
+        <div class="form-group form-inline">
+        <label for="eat"></label><br>
+        <input type="radio" name="eat" value="1" checked> EAT!<br>
+        <input type="radio" name="eat" value="0"> EATEN
+        </div>
+
+        <button type="submit">Add Burger</button>
+      </form>
+</div>
